@@ -8,7 +8,7 @@ void copy (char to[], char from[]);
 
 
 /* print the longest input line */
-int main()
+int main ()
 {
   int len;               /* current line length */
   int max;               /* max length seen so far */
@@ -36,7 +36,7 @@ int main()
 
 
 /* get_line: read a line into s, return length even if > lim */
-int get_line(char s[], int lim)
+int get_line (char s[], int lim)
 {
   int c, i;
 
