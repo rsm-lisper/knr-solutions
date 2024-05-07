@@ -4,6 +4,7 @@
 # define INWORD 1
 # define NOTINWORD 0
 
+
 int main ()
 {
   int c, state = NOTINWORD;
@@ -22,4 +23,6 @@ int main ()
       printf("%c", c);
     }
   }
+
+  return 0;
 }

@@ -5,6 +5,7 @@
 # define INWORD 1
 # define NOTINWORD 0
 
+
 int main ()
 {
   int i, j, c, counters[MAXLENGTH], wordlen = 0, maxwordlen = 0, status = NOTINWORD;
@@ -54,4 +55,6 @@ int main ()
     }
     printf("\n");
   }
+
+  return 0;
 }

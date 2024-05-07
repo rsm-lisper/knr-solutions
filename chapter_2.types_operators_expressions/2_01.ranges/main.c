@@ -36,7 +36,7 @@ int main ()
   printf("[type]\t\t\t[computed]\t\t\t[defined]\n"
          "\t\t\t[min ~ max]\t\t\t[min ~ max]\n");
 
-  // char /////
+  /* char *****/
   for (cp=10, c=9; cp>c; cp=c, --c) progr_d(10, cp);
   clear_progr();
   c_min = cp;
@@ -64,7 +64,7 @@ int main ()
   printf("unsigned char:\t\t%lld ~ %lld\t\t\t\t%d ~ %d\n",
          uc_min, uc_max, 0, UCHAR_MAX);
 
-  // short /////
+  /* short *****/
   for (sp=10, s=9; sp>s; sp=s, --s) progr_d(1000, sp);
   clear_progr();
   s_min = sp;
@@ -92,7 +92,7 @@ int main ()
   printf("unsigned short:\t\t%lld ~ %lld\t\t\t%d ~ %d\n",
          us_min, us_max, 0, USHRT_MAX);
 
-  // int /////
+  /* int *****/
   for (ip=10, i=9; ip>i; ip=i, --i) progr_d(1000000, ip);
   clear_progr();
   i_min = ip;
@@ -120,7 +120,7 @@ int main ()
   printf("unsigned int:\t\t%lld ~ %lld\t\t\t%u ~ %u\n",
          ui_min, ui_max, 0, UINT_MAX);
 
-  // long int /////
+  /* long int *****/
   for (lip=10, li=9; lip>li; lip=li, --li) progr_ld(1000000, lip);
   clear_progr();
   li_min = lip;

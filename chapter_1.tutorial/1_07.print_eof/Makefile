@@ -1,10 +1,10 @@
+BINARY=print_eof
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=print_eof
 
 all: $(BINARY)
 

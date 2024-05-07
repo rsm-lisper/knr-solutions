@@ -1,10 +1,10 @@
+BINARY=word_sep
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=word_sep
 
 all: $(BINARY)
 

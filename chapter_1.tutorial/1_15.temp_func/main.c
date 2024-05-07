@@ -17,6 +17,7 @@ int main ()
     printf(" %3.0f  %6.1f\n", fahr, fahr2cels(fahr));
     fahr = fahr + step;
   }
+  return 0;
 }
 
 

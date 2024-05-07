@@ -1,10 +1,10 @@
+BINARY=char_histogram
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=char_histogram
 
 all: $(BINARY)
 

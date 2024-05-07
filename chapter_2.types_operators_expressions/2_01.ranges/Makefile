@@ -1,10 +1,9 @@
+BINARY=ranges
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
-
-BINARY=ranges
 
 all: $(BINARY)
 

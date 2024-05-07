@@ -4,6 +4,7 @@
 # define INBLANK 1
 # define NOTINBLANK 0
 
+
 int main ()
 {
   int c, status = NOTINBLANK;
@@ -20,4 +21,6 @@ int main ()
       printf("%c", c);
     }
   }
+  
+  return 0;
 }

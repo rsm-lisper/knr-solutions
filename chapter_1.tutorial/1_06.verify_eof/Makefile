@@ -1,10 +1,10 @@
+BINARY=verify_eof
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=verify_eof
 
 all: $(BINARY)
 

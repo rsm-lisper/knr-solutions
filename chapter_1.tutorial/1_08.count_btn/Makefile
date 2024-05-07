@@ -1,10 +1,10 @@
+BINARY=count_btn
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=count_btn
 
 all: $(BINARY)
 

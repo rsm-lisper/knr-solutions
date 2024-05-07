@@ -1,10 +1,10 @@
+BINARY=visible_esc
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=visible_esc
 
 all: $(BINARY)
 

@@ -1,10 +1,10 @@
+BINARY=celsius_fahr
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=celsius_fahr
 
 all: $(BINARY)
 

@@ -1,10 +1,10 @@
+BINARY=hello_exp
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=hello_exp
 
 all: $(BINARY)
 

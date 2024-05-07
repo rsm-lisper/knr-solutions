@@ -1,10 +1,10 @@
+BINARY=longest_line
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=longest_line
 
 all: $(BINARY)
 
