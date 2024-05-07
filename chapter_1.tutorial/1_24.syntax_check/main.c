@@ -225,7 +225,9 @@ void brackets_pop ()
 
 void display_brackets ()
 {
-  for (int q = 0; q < bindex; q++) {
+  int q;
+  
+  for (q = 0; q < bindex; q++) {
     if (q > 0) printf(" ");
     printf("%c", brackets[q]);
   }

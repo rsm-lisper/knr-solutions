@@ -17,6 +17,8 @@ int main ()
     reverse(revline, line);
     printf("%s", revline);
   }
+  
+  return 0;
 }
 
 

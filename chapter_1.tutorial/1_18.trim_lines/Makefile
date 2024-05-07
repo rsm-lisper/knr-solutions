@@ -1,10 +1,10 @@
+BINARY=trim_lines
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=trim_lines
 
 all: $(BINARY)
 

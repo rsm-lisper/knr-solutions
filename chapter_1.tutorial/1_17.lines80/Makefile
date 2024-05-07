@@ -1,10 +1,10 @@
+BINARY=lines80
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=lines80
 
 all: $(BINARY)
 

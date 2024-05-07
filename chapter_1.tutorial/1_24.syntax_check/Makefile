@@ -1,10 +1,10 @@
+BINARY=syntax_check
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=syntax_check
 
 all: $(BINARY)
 

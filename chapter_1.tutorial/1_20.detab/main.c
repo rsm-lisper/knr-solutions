@@ -3,6 +3,7 @@
 
 # define TSIZE 8
 
+
 int main ()
 {
   int c, t;
@@ -26,4 +27,6 @@ int main ()
       printf("%c", c);
     }
   }
+
+  return 0;
 }

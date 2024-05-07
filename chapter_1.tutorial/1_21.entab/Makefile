@@ -1,10 +1,10 @@
+BINARY=entab
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=entab
 
 all: $(BINARY)
 

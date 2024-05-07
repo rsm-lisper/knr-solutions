@@ -38,6 +38,7 @@ int main ()
       startp = p;
     }
   }
+  return 0;
 }
 
 

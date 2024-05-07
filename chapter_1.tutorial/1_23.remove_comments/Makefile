@@ -1,10 +1,10 @@
+BINARY=remove_comments
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=remove_comments
 
 all: $(BINARY)
 

@@ -4,6 +4,7 @@
 # define BEGOFLINE 0
 # define INSIDELINE 1
 
+
 int main ()
 {
   int c, state = BEGOFLINE;
@@ -22,4 +23,6 @@ int main ()
       printf("%c", c);
     }
   }
+  
+  return 0;
 }

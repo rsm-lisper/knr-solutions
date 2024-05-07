@@ -32,7 +32,7 @@ int main ()
 	printf("%c", c);
       }
     }
-    else { // spaces == 0
+    else { /* spaces == 0 */
       if (c == ' ') {
 	spaces++;
 	t++;
@@ -52,6 +52,8 @@ int main ()
       }
     }
   }
+  
+  return 0;
 }
 
 

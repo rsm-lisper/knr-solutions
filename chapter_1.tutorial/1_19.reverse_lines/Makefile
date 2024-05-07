@@ -1,10 +1,10 @@
+BINARY=reverse_lines
 
 CC=gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Wextra -Werror -g -std=c89
 
 CFILES=$(wildcard *.c)
 
-BINARY=reverse_lines
 
 all: $(BINARY)
 
