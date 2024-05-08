@@ -1,4 +1,4 @@
-BINARY=htoi
+BINARY=sqeeze
 
 CFILES=$(wildcard *.c)
 TESTDIR=./tests/

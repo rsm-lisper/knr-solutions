@@ -1,4 +1,4 @@
-BINARY=htoi
+BINARY=any
 
 CFILES=$(wildcard *.c)
 TESTDIR=./tests/
