@@ -1,4 +1,3 @@
-
 # include <stdio.h>
 
 # define MAXLENGTH 16
@@ -49,7 +48,7 @@ int main ()
     printf("\n");
   }
   if (counters[0] > 0) {
-    printf(" >%d: [%2d] ", MAXLENGTH - 1, counters[0]);
+    printf(">%d: [%2d] ", MAXLENGTH - 1, counters[0]);
     for (j = 0; j < counters[0]; j++) {
       printf("#");
     }

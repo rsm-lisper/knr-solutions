@@ -1,4 +1,3 @@
-
 # include <stdio.h>
 
 # define INBLANK 1
