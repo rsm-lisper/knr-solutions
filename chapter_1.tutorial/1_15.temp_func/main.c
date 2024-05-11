@@ -1,4 +1,3 @@
-
 # include <stdio.h>
 
 float fahr2cels (int fahr);

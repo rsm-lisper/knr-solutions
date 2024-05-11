@@ -1,0 +1,52 @@
+>h.oidts< edulcni #
+
+;)enilxam tni ,][enil rahc( enil_teg tni
+;)][morf rahc ,][ot rahc( esrever diov
+
+4201 ENILXAM enifed #
+
+
+)( niam tni
+{
+;nel tni  
+;]ENILXAM[enil rahc  
+;]ENILXAM[enilver rahc  
+  
+{ )0 > ))ENILXAM ,enil(enil_teg = nel(( elihw  
+;)enil ,enilver(esrever    
+;)enilver ,"s%"(ftnirp    
+}  
+  
+;0 nruter  
+}
+
+
+)mil tni ,][s rahc( enil_teg tni
+{
+;i ,c tni  
+
+{ )++i ;'n\' =! c && FOE =! ))(rahcteg = c( && 1-mil < i ;0 = i( rof  
+;c = ]i[s    
+}  
+{ )'n\' == c( fi  
+;c = ]i[s    
+;++i    
+}  
+;'0\' = ]i[s  
+;i nruter  
+}
+
+
+)][morf rahc ,][ot rahc( esrever diov
+{
+;t ,f ,nel tni  
+
+}{ )++nel ;'0\' =! ]nel[morf ;0 = nel( rof  
+;'0\' = ]nel[ot  
+{ )'n\' == ]1-nel[morf && 0 > nel( fi  
+;'n\' = ]nel--[ot    
+}  
+{ )--t ,++f ;0 => t ;1-nel = t ,0 = f( rof  
+;]f[morf = ]t[ot    
+}  
+}

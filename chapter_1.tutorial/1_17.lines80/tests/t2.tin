@@ -1,0 +1,34 @@
+If you want the convenience of not having to continually reenter your password for future operations, you can answer yes to this prompt. If you're concerned about caching your Subversion passwords in plaintext and do not want to be asked about it again and again, you can disable caching of plaintext passwords either permanently, or on a server-per-server basis.
+[Warning]
+
+When considering how to use Subversion's password caching system, you'll want to consult any governing policies that are in place for your client computer—many companies have strict rules about the ways that their employees' authentication credentials should be stored.
+
+To permanently disable caching of passwords in plaintext, add the line store-plaintext-passwords = no to the [global] section in the servers configuration file on the local machine. To disable plaintext password caching for a particular server, use the same setting in the appropriate group section in the servers configuration file. (See the section called “Configuration Options” in Chapter 7, Customizing Your Subversion Experience for details.)
+
+To disable password caching entirely for any single Subversion command-line operation, pass the --no-auth-cache option to that command line. To permanently disable caching entirely, add the line store-passwords = no to your local machine's Subversion configuration file.
+Removing cached credentials
+
+Sometimes users will want to remove specific credentials from the disk cache. To do this, you need to navigate into the auth/ area and manually delete the appropriate cache file. Credentials are cached in individual files; if you look inside each file, you will see keys and values. The svn:realmstring key describes the particular server realm that the file is associated with:
+
+$ ls ~/.subversion/auth/svn.simple/
+5671adf2865e267db74f09ba6f872c28
+3893ed123b39500bca8a0b382839198e
+5c3c22968347b390f349ff340196ed39
+
+$ cat ~/.subversion/auth/svn.simple/5671adf2865e267db74f09ba6f872c28
+
+K 8
+username
+V 3
+joe
+K 8
+password
+V 4
+blah
+K 15
+svn:realmstring
+V 45
+<https://svn.domain.com:443> Joe's repository
+END
+
+Once you have located the proper cache file, just delete it.

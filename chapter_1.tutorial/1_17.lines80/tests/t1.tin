@@ -1,0 +1,21 @@
+Apache Subversion is fortunate to have a community that values documentation. This page contains pointers to varies sources of documentation aimed at Subversion users and developers both of Subversion and of third-party tools with which Subversion integrates. Much of this documentation is itself freely licensed, so if you spot errors in them, please feel free to submit corrections to the relevant owners of the documentation.
+Subversion User Manuals
+
+If you want to know how to use Subversion, you can find a number of published user manuals available for purchase online. One of these texts — Version Control With Subversion (affectionately known as "the Subversion book") — carries a free license, was developed openly by the Subversion community itself, and is also available in full online for free at https://svnbook.red-bean.com.
+Release Notes
+
+Release notes for each minor release series, describing its major features, differences, and upgrade caveats with respect to prior release lines, are available:
+
+    Release notes
+
+Community Guides
+
+The Subversion community operates at peak efficiency when everyone honors the various policies which were established by the community as the result of years of experience. The following documents provide invaluable insight into How Stuff Gets Done Around Here. We hope you find them useful not only as you contribute to Subversion, but also as you then seek to develop and establish best practices in your own software projects.
+
+    The Subversion Community Guide (aka "HACKING")
+
+Subversion API
+
+Subversion is a collection of modular libraries written in the C programming language, each of which has a clearly defined collection of functions and types that together make up Subversion's application programming interface (API). This API is stable within major release streams of the software itself, so if you write software that uses Subversion 1.1.0's interfaces, you should expect that software to continue to work when the Subversion libraries are upgraded to 1.6.0 without your having to change or recompile your software at all.
+
+After Subversion versions have reached their end of life, we still provide the old documentation for archive/historical purposes.
