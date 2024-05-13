@@ -14,7 +14,7 @@ all: $(BINARY)
 $(BINARY): $(CFILES)
 	$(CC) $(CFLAGS) -o $@ $^
 
-test: $(TEST_RESULTS)
+check: $(TEST_RESULTS)
 
 %.res: %.tin
 	@./$(BINARY) <$? >$@ult
