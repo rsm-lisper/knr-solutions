@@ -1,44 +1,45 @@
-# include <stdio.h>
-# include <stdlib.h>
 
-# define STATE_CODE 0
-# define STATE_STRING 1
-# define STATE_STRING_ESC 2
-# define STATE_CHAR 3
-# define STATE_CHAR_ESC 4
-# define STATE_SLASH 5
-# define STATE_LINECOMMENT 6
-# define STATE_BLOCKCOMMENT 7
-# define STATE_BLOCKCOMMENT_ASTER 8
+#include <stdio.h>
+#include <stdlib.h>
 
-# define ERROR_BRACKETS_LIMIT_REACHED 1
-# define ERROR_UNKNOWN_STATE 2
-# define ERROR_UNKNOWN_SYNTAX_ERROR 3
+#define STATE_CODE 0
+#define STATE_STRING 1
+#define STATE_STRING_ESC 2
+#define STATE_CHAR 3
+#define STATE_CHAR_ESC 4
+#define STATE_SLASH 5
+#define STATE_LINECOMMENT 6
+#define STATE_BLOCKCOMMENT 7
+#define STATE_BLOCKCOMMENT_ASTER 8
 
-# define BRACKETS_LIMIT 1000
+#define ERROR_BRACKETS_LIMIT_REACHED 1
+#define ERROR_UNKNOWN_STATE 2
+#define ERROR_UNKNOWN_SYNTAX_ERROR 3
 
-# define SYNERR_BRACKETS_DONT_MATCH 1
-# define SYNERR_OPEN_BRACKETS 2
-# define SYNERR_NO_BRACKETS 3
-# define SYNERR_EOF_IN_STRING 4
-# define SYNERR_EOF_IN_CHAR 5
-# define SYNERR_EOF_IN_BLOCKCOMMENT 6
+#define BRACKETS_LIMIT 1000
 
-void pcode ();
-void pstring ();
-void pstringesc ();
-void pchar ();
-void pcharesc ();
-void pslash ();
-void plinecomm ();
-void pblockcomm ();
-void pblockcommaster ();
+#define SYNERR_BRACKETS_DONT_MATCH 1
+#define SYNERR_OPEN_BRACKETS 2
+#define SYNERR_NO_BRACKETS 3
+#define SYNERR_EOF_IN_STRING 4
+#define SYNERR_EOF_IN_CHAR 5
+#define SYNERR_EOF_IN_BLOCKCOMMENT 6
 
-void brackets_push ();
-void brackets_pop ();
-void display_brackets ();
-void syntax_message ();
-void internal_error ();
+void pcode());
+void pstring();
+void pstringesc();
+void pchar();
+void pcharesc();
+void pslash();
+void plinecomm();
+void pblockcomm();
+void pblockcommaster();
+
+void brackets_push();
+void brackets_pop();
+void display_brackets();
+void syntax_message();
+void internal_error();
 
 int error, syntax_error, c,
   state = STATE_CODE,
@@ -48,7 +49,7 @@ int error, syntax_error, c,
 char brackets[BRACKETS_LIMIT];
 
 
-int main ()
+int main()
 {
   while ((c = getchar()) != EOF) {
     if (c == '\n') {
@@ -100,7 +101,7 @@ int main ()
 }
 
 
-void pcode ()
+void pcode()
 {
   switch (c) {
   case '{': case '(': case '[':
@@ -117,7 +118,7 @@ void pcode ()
 }
 
 
-void pstring ()
+void pstring()
 {
   switch (c) {
   case '"':
@@ -128,13 +129,13 @@ void pstring ()
 }
 
 
-void pstringesc ()
+void pstringesc()
 {
   state = STATE_STRING;
 }
 
 
-void pchar ()
+void pchar()
 {
   switch (c) {
   case '\'':
@@ -145,13 +146,13 @@ void pchar ()
 }
 
 
-void pcharesc ()
+void pcharesc()
 {
   state = STATE_CHAR;
 }
 
 
-void pslash ()
+void pslash()
 {
   switch (c) {
   case '/':
@@ -164,7 +165,7 @@ void pslash ()
 }
 
 
-void plinecomm ()
+void plinecomm()
 {
   if (c == '\n') {
     state = STATE_CODE;
@@ -172,7 +173,7 @@ void plinecomm ()
 }
 
 
-void pblockcomm ()
+void pblockcomm()
 {
   if (c == '*') {
     state = STATE_BLOCKCOMMENT_ASTER;
@@ -180,7 +181,7 @@ void pblockcomm ()
 }
 
 
-void pblockcommaster ()
+void pblockcommaster()
 {
   switch (c) {
   case '/':
@@ -193,7 +194,7 @@ void pblockcommaster ()
 }
 
 
-void brackets_push ()
+void brackets_push()
 {
   if (bindex < BRACKETS_LIMIT) {
     brackets[bindex++] = c;
@@ -204,14 +205,13 @@ void brackets_push ()
 }
 
 
-void brackets_pop ()
+void brackets_pop()
 {
   char b;
 
   if (bindex > 0) {
     b = brackets[--bindex];
-    if ((b == '(' && c != ')') || (b == '{' && c != '}')
-        || (b == '[' && c != ']')) {
+    if ((b == '(' && c != ')') || (b == '{' && c != '}') || (b == '[' && c != ']')) {
       syntax_error = SYNERR_BRACKETS_DONT_MATCH;
       syntax_message();
     }
@@ -222,18 +222,16 @@ void brackets_pop ()
 }
 
 
-void display_brackets ()
+void display_brackets()
 {
-  int q;
-  
-  for (q = 0; q < bindex; q++) {
+  for (int q = 0; q < bindex; q++) {
     if (q > 0) printf(" ");
     printf("%c", brackets[q]);
   }
 }
 
 
-void syntax_message ()
+void syntax_message()
 {
   printf("* Syntax Error, line %d, position %d: ", file_line, file_pos);
   switch (syntax_error) {
@@ -262,9 +260,9 @@ void syntax_message ()
 }
 
 
-void internal_error ()
+void internal_error()
 {
-  printf("[INTERNAL ERROR]\n");
+  printf("/*[INTERNAL ERROR]\n");
   switch (error) {
   case ERROR_BRACKETS_LIMIT_REACHED:
     printf("brackets[] limit (%d) reached.\n", BRACKETS_LIMIT); break;
@@ -273,5 +271,5 @@ void internal_error ()
   default:
     printf("Unknown error (%d).\n", error);
   }
-  exit(EXIT_FAILURE);
+  exit(/*EXIT_FAILURE);
 }

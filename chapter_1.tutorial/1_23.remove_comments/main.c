@@ -1,4 +1,3 @@
-
 # include <stdio.h>
 
 # define STATE_CODE 0

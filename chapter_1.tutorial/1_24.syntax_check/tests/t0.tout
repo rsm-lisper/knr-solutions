@@ -1,0 +1,3 @@
+* Syntax Error, line 28, position 13: there is no bracket to be closed by ')'.
+* Syntax Error, line 276, position 0: brackets still not closed at the end of file { (.
+* Syntax Error, line 276, position 0: block comment still not closed at the end of file.

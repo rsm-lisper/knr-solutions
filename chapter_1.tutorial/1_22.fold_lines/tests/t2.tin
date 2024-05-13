@@ -1,0 +1,14 @@
+
+Implementing a script to create stub functions (including a message printf("not implemented")) is straight forward: create an xml representation output.xml of the source coude using gccxml, use nm to extract the symbol names of the text code section, get the corresponding symbols from output.xml to ensure that they are functions, and write the stubs to a file. Adding a test target to the makefile is no different than adding other targets. – 
+evnu
+Oct 8, 2012 at 15:45
+
+Hello,
+
+I am wondering does any one know of any tutorials or text books that cover using makefile to create some simple unit testing for my c programs.
+
+I would like to run some automated testing that will create a test suite and add this to my Makefile.
+
+Just want some ideas on how to get started.
+
+Many thanks for any suggestions

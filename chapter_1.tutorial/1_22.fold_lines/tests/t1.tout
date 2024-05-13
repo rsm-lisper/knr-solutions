@@ -1,0 +1,94 @@
+Improvements
+
+    Major
+ performance
+ improvements:
+ reduced startup
+ time, faster video
+ loading, faster
+ project
+ loading
+    Full resolution
+ preview is now
+ enabled by
+ default, uses
+ zero-copy
+ pipeline
+    Added video
+ speed control
+ (which can also be
+ keyframed) and it
+ adjusts the
+ stabilization to
+ the speed
+ change
+    Added CLI
+ interface: Can
+ render, open file
+ in GUI, export
+ project, watch
+ folder and
+ stabilize new
+ videos. [see
+ here]
+    When dropping
+ multiple files,
+ Gyroflow now asks
+ if you want to
+ join them or add
+ to render
+ queue
+    Added GoPro
+ Hero 11 support
+ (official lens
+ profiles,
+ autoboost mode.
+ Hyperview is not
+ accurate
+ yet)
+    Added support
+ for zoom lenses,
+ and zoom can be
+ changing
+ throughout the
+ video (Sony
+ cameras) [see
+ here]
+    Loading gyro
+ data from BRAW
+ files is now much
+ faster
+    Added a way to
+ create a default
+ settings preset
+ (put
+ default.gyroflow
+ in camera_presets)
+ which will be
+ applied to every
+ loaded
+ video
+    Added zooming
+ amount to the
+ chart and renamed
+ XYZ buttons to RPY
+ (roll, pitch,
+ yaw)
+    Increased max
+ rendering
+ resolution to
+ 8192x8192
+    Merge .gcsv
+ files when merging
+ video
+ files
+    Added jpg to
+ detected image
+ sequences
+    Added spectrum
+ analyzer for
+ gyro/accl data
+ (mostly for
+ diagnostics)
+    Updated icon on
+ Windows
