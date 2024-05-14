@@ -1,0 +1,21 @@
+---[ORYGINAL:]---
+Ullam blanditiis eius est aut deleniti. [			]
+Nobis modi eos dignissimos sed earum nesciunt dolore.
+Ea	molestiae	esse	repudiandae	ipsum	quia	harum.
+
+
+
+Qui architecto in distinctio explicabo non suscipit hic.
+
+---[ESCAPE:]---
+Ullam blanditiis eius est aut deleniti. [\t\t\t]\nNobis modi eos dignissimos sed earum nesciunt dolore.\nEa\tmolestiae\tesse\trepudiandae\tipsum\tquia\tharum.\n\n\n\nQui architecto in distinctio explicabo non suscipit hic.\n
+---[ESC/UNESCAPE:]---
+Ullam blanditiis eius est aut deleniti. [			]
+Nobis modi eos dignissimos sed earum nesciunt dolore.
+Ea	molestiae	esse	repudiandae	ipsum	quia	harum.
+
+
+
+Qui architecto in distinctio explicabo non suscipit hic.
+
+------
