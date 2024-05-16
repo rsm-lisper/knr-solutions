@@ -1,0 +1,10 @@
+SUBDIRS=$(wildcard 4_*/)
+
+TOPTARGETS=all check clean
+
+$(TOPTARGETS): $(SUBDIRS)
+
+$(SUBDIRS):
+	$(MAKE) -C $@ $(MAKECMDGOALS)
+
+.PHONY: $(TOPTARGETS)  $(SUBDIRS)

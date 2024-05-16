@@ -1,0 +1,9 @@
+Pattern "one" found at position 50:
+1 one 2 one 3 one 4 one 5 one 6 one 7 one 8 one 9 one 0
+
+Pattern "one" found at position 45:
+1234567890one45678901234567890123456789012345one9012345
+
+Pattern "one" found at position 1:
+ one.
+
