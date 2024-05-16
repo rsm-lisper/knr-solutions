@@ -2,6 +2,8 @@ SUBDIRS=$(wildcard 3_*/)
 
 TOPTARGETS=all check clean
 
+MAKEFLAGS+=--silent
+
 $(TOPTARGETS): $(SUBDIRS)
 
 $(SUBDIRS):

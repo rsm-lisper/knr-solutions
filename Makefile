@@ -13,8 +13,8 @@ MAKEFLAGS+=--silent
 $(TOPTARGETS): $(SUBDIRS)
 
 $(SUBDIRS):
-	echo "* Directory "$(ANSIBOLD)$@$(ANSIRST)":"
+	echo "* Directory "$(ANSIBOLD)$(ANSIYELLOW)$@$(ANSIRST)":"
 	$(MAKE) -C $@ $(MAKECMDGOALS)
-	echo $(ANSIBOLD)$@$(ANSIRST)" done."
+	echo $(ANSIYELLOW)"..."$@$(ANSIRST)" done."
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)

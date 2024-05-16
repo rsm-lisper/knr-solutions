@@ -28,7 +28,7 @@ check: $(TEST_RESULTS)
 	echo "** "$(ANSIBOLD)$(ANSIYBIN)" test results:"$(ANSIBOLD)$(ANSIGOK)
 
 %.res: %.tin
-	echo -n " - Testing "$(ANSIBOLD)$(BINARY)$(ANSIRST)":" \
+	echo -n " - testing "$(ANSIBOLD)$(BINARY)$(ANSIRST)":" \
 		$(ANSIYELLOW)$(patsubst $(TESTDIR)%.tin,%,$?)$(ANSIRST)
 	./$(BINARY) <$? >$@ult
 	diff --color=always --text $@ult $(patsubst %.tin,%.tout,$?)
