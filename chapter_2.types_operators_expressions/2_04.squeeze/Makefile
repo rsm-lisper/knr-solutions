@@ -1,4 +1,4 @@
-BINARY=escape
+BINARY=squeeze
 
 CFILES=$(wildcard *.c)
 TESTDIR=tests/

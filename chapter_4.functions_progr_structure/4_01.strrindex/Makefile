@@ -13,22 +13,29 @@ ANSIYELLOW="\033[33m"
 ANSIBOLD="\033[1m"
 ANSIRST="\033[0m"
 ANSIGOK=" ["$(ANSIGREEN)"OK"$(ANSIRST)"] "
+ANSIYBIN=$(ANSIYELLOW)$(BINARY)$(ANSIRST)
+
+MAKEFLAGS+=--silent
 
 all: $(BINARY)
 
 $(BINARY): $(CFILES)
+	echo -n "** Building "$(ANSIYBIN)":"
 	$(CC) $(CFLAGS) -o $@ $^
+	echo $(ANSIGOK)
 
 check: $(TEST_RESULTS)
-	@echo $(ANSIBOLD)$(BINARY)$(ANSIRST) test results:$(ANSIBOLD)$(ANSIGOK)
+	echo "** "$(ANSIBOLD)$(ANSIYBIN)" test results:"$(ANSIBOLD)$(ANSIGOK)
 
 %.res: %.tin
-	@echo -n "- Testing "$(ANSIBOLD)$(BINARY)$(ANSIRST): \
+	echo -n " - Testing "$(ANSIBOLD)$(BINARY)$(ANSIRST)":" \
 		$(ANSIYELLOW)$(patsubst $(TESTDIR)%.tin,%,$?)$(ANSIRST)
-	@./$(BINARY) <$? >$@ult
-	@diff --color=always --text $@ult $(patsubst %.tin,%.tout,$?)
-	@echo $(ANSIGOK)
+	./$(BINARY) <$? >$@ult
+	diff --color=always --text $@ult $(patsubst %.tin,%.tout,$?)
+	echo $(ANSIGOK)
 
 clean:
+	echo -n "** Cleaning "$(ANSIYBIN)":"
 	rm -f $(BINARY)
 	rm -f $(TESTDIR)*.result
+	echo $(ANSIGOK)
