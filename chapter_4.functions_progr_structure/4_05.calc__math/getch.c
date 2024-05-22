@@ -2,12 +2,12 @@
 
 # define BUFSIZE 128
 
-char buf[BUFSIZE];   /* buffer fir ungetch */
+char buf[BUFSIZE];   /* buffer for ungetch */
 int bufp = 0;        /* next free position in buf */
 
 
 /* getch: get a (possibly pushed-back) character */
-int getch(void)
+int getch (void)
 {
   return (bufp > 0) ? buf[--bufp] : getchar();
 }

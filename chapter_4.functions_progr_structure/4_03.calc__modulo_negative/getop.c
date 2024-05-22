@@ -2,7 +2,7 @@
 # include <ctype.h>
 
 # include "getop.h"
-# include "get_ungetch.h"
+# include "getch.h"
 
 
 /* getop: get next character or numeric operand */

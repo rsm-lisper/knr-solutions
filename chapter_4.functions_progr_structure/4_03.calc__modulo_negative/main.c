@@ -1,7 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h> /* for atof */
 
-# include "pop_push.h"
+# include "stack.h"
 # include "getop.h"
 
 # define MAXOP 128    /* max size of operand or operator */
