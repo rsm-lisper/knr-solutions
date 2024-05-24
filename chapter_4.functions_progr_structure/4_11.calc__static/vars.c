@@ -1,6 +1,6 @@
 
-double vars['Z'-'A'];
-double last_val;
+static double vars['Z'-'A'];
+static double last_val;
 
 
 /* set_var: set variable */
