@@ -2,12 +2,34 @@
 # include <stdlib.h> /* for atof */
 # include <string.h> /* strcmp */
 # include <math.h>
+# include <ctype.h>
 
-# include "stack.h"
-# include "getop.h"
-# include "vars.h"
+int getop (char s[]);
+int getch (void);
+void ungetch (int c);
+void push (double f);
+double pop (void);
+double peek (void);
+void clear (void);
+void set_var (char var_name, double value);
+double get_var (char var_name);
+double set_last (double value);
+double get_last (void);
 
+# define GETOP_NUMBER '0'   /* signal that a number was found */
+# define GETOP_SYMBOL 'a'   /* signal that a symbol was found */
 # define MAXOP 128    /* max size of operand or operator */
+# define BUFSIZE 128
+# define MAXVAL 128 /* max depth of val stack */
+
+int sp = 0;         /* next free stack position */
+double val[MAXVAL]; /* value stack */
+
+char buf[BUFSIZE];   /* buffer for ungetch */
+int bufp = 0;        /* next free position in buf */
+
+double vars['Z'-'A'];
+double last_val;
 
 
 /* reverse Polish calculator */
@@ -118,4 +140,156 @@ int main ()
     }
   }
   return 0;
+}
+
+
+/* getop: get next character, numeric operand or function/command */
+int getop (char s[])
+{
+  int i, c;
+  
+  while ((s[0] = c = getch()) == ' ' || c == '\t') {
+  }
+
+  if (c == EOF || c == '\n') {
+    return c;
+  }
+  /* operator, single digit number or single letter symbol */
+  if ((s[1] = c = getch()) == ' ' || c == '\t' || c == '\n' || c == EOF) {
+    ungetch(c);
+    s[1] = '\0';
+    c = s[0];
+    /* number */
+    if (isdigit(c)) {
+      return GETOP_NUMBER;
+    }
+    /* single letter symbol [a-zA-Z] */
+    else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
+      return GETOP_SYMBOL;
+    }
+    /* operator */
+    else {
+      return c;
+    }
+  }
+  /* number or symbol */
+  else {
+    ungetch(c);
+    c = s[0];
+    /* number */
+    if (isdigit(c) || c == '-' || c == '.') {
+      i = 0;
+      if (c == '-') { /* move by a minus (-) sign */
+	s[++i] = c = getch();
+      }
+      if (isdigit(c)) { /* collect integer part */
+	while (isdigit(s[++i] = c = getch())) {
+	}
+      }
+      if (c == '.') { /* collect fraction part */
+	while (isdigit(s[++i] = c = getch())) {
+	}
+      }
+      s[i] = '\0';
+      ungetch(c);
+      return GETOP_NUMBER;
+    }
+    /* symbol */
+    else {
+      i = 0;
+      while ((s[++i] = c = getch()) != ' ' && c != '\t' && c != '\n' && c != EOF) {
+      }
+      s[i] = '\0';
+      ungetch(c);
+      return GETOP_SYMBOL;
+    }
+  }
+}
+
+
+/* getch: get a (possibly pushed-back) character */
+int getch (void)
+{
+  return (bufp > 0) ? buf[--bufp] : getchar();
+}
+
+
+/* ungetch: push character back on input */
+void ungetch (int c)
+{
+  if (bufp >= BUFSIZE) {
+    printf("ungetch: too many characters\n");
+  } else {
+    buf[bufp++] = c;
+  }
+}
+
+
+/* push: push f onto stack */
+void push (double f)
+{
+  if (sp < MAXVAL) {
+    val[sp++] = f;
+  } else {
+    printf("error: stack full, can't push %g\n", f);
+  }
+}
+
+
+/* pop: pop and return top value from stack */
+double pop (void)
+{
+  if (sp > 0) {
+    return val[--sp];
+  } else {
+    printf("error: stack empty\n");
+    return 0.0;
+  }
+}
+
+
+/* peek: return top value from stack without popping */
+double peek (void)
+{
+  if (sp > 0) {
+    return val[sp - 1];
+  } else {
+    printf("error: stack empty\n");
+    return 0.0;
+  }
+}
+
+
+/* clear: clear the stack */
+void clear (void)
+{
+  sp = 0;
+}
+
+
+/* set_var: set variable */
+void set_var (char var_name, double value)
+{
+  vars[var_name-'A'] = value;
+}
+
+
+/* get_var: get variable value */
+double get_var (char var_name)
+{
+  return vars[var_name-'A'];
+}
+
+
+/* set_last: set last returned value */
+double set_last (double value)
+{
+  return last_val = value;
+}
+
+
+/* get_last: get last returned value */
+double get_last (void)
+{
+  return last_val;
 }
