@@ -1,0 +1,84 @@
+str_ncpy("",
+	 "versions of",
+	 0) =>
+	""
+str_ncpy("",
+	 "versions of",
+	 1) =>
+	"v"
+str_ncpy("",
+	 "versions of",
+	 10) =>
+	"versions o"
+str_ncpy("",
+	 "versions of",
+	 11) =>
+	"versions of"
+str_ncpy("",
+	 "versions of",
+	 12) =>
+	"versions of"
+str_ncpy("",
+	 "the library functions",
+	 100) =>
+	"the library functions"
+str_ncat("version of",
+	 " the library.",
+	 5) =>
+	"version of the "
+str_ncat("version of",
+	 " the library.",
+	 50) =>
+	"version of the library."
+str_ncat("version of",
+	 " the library.",
+	 0) =>
+	"version of"
+str_ncat("version of",
+	 " the library.",
+	 12) =>
+	"version of the library"
+str_ncat("version of",
+	 " the library.",
+	 13) =>
+	"version of the library."
+str_ncat("version of",
+	 " the library.",
+	 14) =>
+	"version of the library."
+str_ncmp("some",
+	 "",
+	 0) =>
+	0
+str_ncmp("some",
+	 "",
+	 1) =>
+	115
+str_ncmp("some",
+	 "s",
+	 1) =>
+	0
+str_ncmp("some",
+	 "s",
+	 2) =>
+	111
+str_ncmp("some",
+	 "s",
+	 5) =>
+	111
+str_ncmp("versions OF",
+	 "versions of",
+	 12) =>
+	-32
+str_ncmp("versions OF",
+	 "versions of",
+	 11) =>
+	-32
+str_ncmp("versions OF",
+	 "versions of",
+	 10) =>
+	-32
+str_ncmp("versions OF",
+	 "versions of",
+	 9) =>
+	0
