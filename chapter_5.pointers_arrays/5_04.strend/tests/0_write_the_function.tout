@@ -1,0 +1,13 @@
+strend("Write the function", "") => 1
+strend("Write the function", "n") => 1
+strend("Write the function", "x") => 0
+strend("Write the function", "nn") => 0
+strend("Write the function", "ion") => 1
+strend("Write the function", "enction") => 0
+strend("Write the function", "Write") => 0
+strend("Write the function", "1. Write the function") => 0
+strend("Write the function", " Write the function") => 0
+strend("Write the function", "Write the function") => 1
+strend("Write the function", "function") => 1
+strend("Write the function", " function") => 1
+strend("Write the function", "ite the function") => 1
