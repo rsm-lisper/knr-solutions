@@ -31,8 +31,6 @@ int month_day (int year, int yearday, int *pmonth, int *pday)
   int *dt = *(daytab+leap);
   if (yearday < 1 || (!leap && yearday>365) || (leap && yearday>366))
     return -1; /* wrong day */
-  /* for (i = 1; yearday > daytab[leap][i]; i++) */
-  /*   yearday -= daytab[leap][i]; */
   for (i = 1; yearday > *(dt+i); i++)
     yearday -= *(dt+i);
   *pmonth = i;
