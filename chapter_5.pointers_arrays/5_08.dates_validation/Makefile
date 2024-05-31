@@ -1,3 +1,3 @@
 BINARY=dates_validation
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

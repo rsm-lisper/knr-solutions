@@ -1,3 +1,3 @@
 BINARY=fahr_celsius_revers
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

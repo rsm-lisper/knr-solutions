@@ -1,3 +1,3 @@
 BINARY=ranges
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

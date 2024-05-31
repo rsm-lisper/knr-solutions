@@ -1,3 +1,3 @@
 BINARY=binsearch
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

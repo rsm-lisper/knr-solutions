@@ -1,3 +1,3 @@
 BINARY=calc__stack_cmds
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

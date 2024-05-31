@@ -1,3 +1,3 @@
 BINARY=detab
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

@@ -1,3 +1,3 @@
 BINARY=longest_line
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

@@ -1,3 +1,3 @@
 BINARY=squeeze
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

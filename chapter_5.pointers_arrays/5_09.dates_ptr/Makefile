@@ -1,3 +1,3 @@
 BINARY=dates_ptr
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

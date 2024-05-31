@@ -1,3 +1,3 @@
 BINARY=setbits
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

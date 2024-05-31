@@ -1,3 +1,3 @@
 BINARY=swap_macro
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

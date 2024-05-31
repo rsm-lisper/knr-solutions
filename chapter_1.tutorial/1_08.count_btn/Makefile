@@ -1,3 +1,3 @@
 BINARY=count_btn
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

@@ -1,3 +1,3 @@
 BINARY=strlib
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

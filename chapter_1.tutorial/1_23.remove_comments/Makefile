@@ -1,3 +1,3 @@
 BINARY=remove_comments
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

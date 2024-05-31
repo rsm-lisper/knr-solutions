@@ -1,3 +1,3 @@
 BINARY=word_sep
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

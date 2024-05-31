@@ -1,3 +1,3 @@
 BINARY=visible_esc
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

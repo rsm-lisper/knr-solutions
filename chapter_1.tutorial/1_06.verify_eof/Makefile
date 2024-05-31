@@ -1,3 +1,3 @@
 BINARY=verify_eof
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

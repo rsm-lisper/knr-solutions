@@ -1,3 +1,3 @@
 BINARY=char_histogram
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

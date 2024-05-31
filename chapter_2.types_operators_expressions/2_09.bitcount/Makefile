@@ -1,3 +1,3 @@
 BINARY=bitcount
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

@@ -1,3 +1,3 @@
 BINARY=atof_sci
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

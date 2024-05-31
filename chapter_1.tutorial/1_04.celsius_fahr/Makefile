@@ -1,3 +1,3 @@
 BINARY=celsius_fahr
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

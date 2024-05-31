@@ -1,3 +1,3 @@
 BINARY=htoi
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

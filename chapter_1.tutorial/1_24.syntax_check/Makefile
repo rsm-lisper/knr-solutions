@@ -1,3 +1,3 @@
 BINARY=syntax_check
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

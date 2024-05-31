@@ -1,3 +1,3 @@
 BINARY=trim_lines
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

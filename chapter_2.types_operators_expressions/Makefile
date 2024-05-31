@@ -1,3 +1,3 @@
 SUBDIRS=$(wildcard 2_*/)
 
-include ../Makefile.chapter
+include ../Chapter_incl.mk

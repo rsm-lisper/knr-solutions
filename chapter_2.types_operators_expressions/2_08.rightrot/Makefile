@@ -1,3 +1,3 @@
 BINARY=rightrot
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

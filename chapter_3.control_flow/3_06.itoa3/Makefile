@@ -1,3 +1,3 @@
 BINARY=itoa3
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

@@ -1,3 +1,3 @@
 BINARY=strrindex
 
-include ../../Makefile.exerc
+include ../../Exercise_incl.mk

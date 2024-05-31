@@ -29,7 +29,8 @@ check: $(TEST_RESULTS)
 %.res: %.tin
 	echo -n " - testing "$(ANSIBOLD)$(BINARY)$(ANSIRST)":" \
 		$(ANSIYELLOW)$(patsubst $(TESTDIR)%.tin,%,$?)$(ANSIRST)
-	./$(BINARY) <$? >$@ult
+	TEST_ARGS=$$(cat $(patsubst %.tin,%.targs,$?) 2>/dev/null) ; \
+	./$(BINARY) $$TEST_ARGS <$? >$@ult
 	diff --color=always --text $@ult $(patsubst %.tin,%.tout,$?)
 	echo $(ANSIGOK)
 
