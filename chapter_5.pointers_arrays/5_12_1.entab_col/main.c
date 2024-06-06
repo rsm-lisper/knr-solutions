@@ -6,6 +6,7 @@
 
 int main (int argc, char *argv[])
 {
+  char *bin = argv[0];
   unsigned int tabstart = 0, tabsize = 8, err = 0;
 
   while (--argc > 0)
@@ -26,7 +27,7 @@ int main (int argc, char *argv[])
       err = 1;
     }
   if (err) {
-    printf("Syntax: entab -m +n\n\t-m : tabs start at column m\n\t+n : tab stops every n columns (starting at column m)\n");
+    printf("Syntax: %s -m +n\n\t-m : tabs start at column m\n\t+n : tab stops every n columns (starting at column m)\n", bin);
     return 1;
   }
   entab(tabsize, tabstart);

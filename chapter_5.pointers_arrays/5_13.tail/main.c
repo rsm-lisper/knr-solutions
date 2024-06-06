@@ -9,12 +9,13 @@ char *lineptr[MAXLINES]; /* pointers to lines of text */
 
 int main (int argc, char *argv[])
 {
+  char *bin = argv[0];
   int lastn = DEF_LASTN; /* number of lines to print */
   int nlines; /* number of lines read */
 
   if (argc == 2)
     if (*(++argv)[0] != '-' || (lastn = atoi((*argv)+1)) == 0) {
-      printf("Syntax: tail -n\n\tn\tprint last n lines, %d by default\n", DEF_LASTN);
+      printf("Syntax: %s -n\n\tn\tprint last n lines, %d by default\n", bin, DEF_LASTN);
       return 1;
     }
 
