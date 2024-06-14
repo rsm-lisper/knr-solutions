@@ -23,6 +23,7 @@ int main (int argc, char *argv[])
     int l;
     for (l = (nlines-lastn < 0 ? 0 : nlines-lastn); l < nlines; l++)
       printf("%s\n", lineptr[l]);
+    return 0;
   }
   else {
     switch (nlines) {
@@ -32,5 +33,4 @@ int main (int argc, char *argv[])
     }
     return 2;
   }
-  return 0;
 }

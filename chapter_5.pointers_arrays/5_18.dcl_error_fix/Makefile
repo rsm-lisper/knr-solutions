@@ -1,3 +1,3 @@
-BINARY=sort_dirorder
+BINARY=dcl_error_fix
 
 include ../../Exercise_incl.mk
