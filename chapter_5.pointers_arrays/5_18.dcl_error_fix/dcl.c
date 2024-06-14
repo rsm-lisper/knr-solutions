@@ -1,0 +1,45 @@
+# include <stdio.h>
+# include <string.h>
+
+# include "dcl.h"
+# include "gettoken.h"
+
+char name[MAXTOKEN]; /* identifier name */
+char datatype[MAXTOKEN]; /* data type = char, int, etc. */
+char out[MAXOUT];
+
+/* dcl: parse declarator */
+void dcl (void)
+{
+  int ns;
+
+  for (ns = 0; gettoken() == '*'; ) /* count *'s */
+    ns++;
+  dirdcl();
+  while (ns-- > 0)
+    strcat(out, " pointer to");
+}
+
+/* dirdcl: parse a direct declarator */
+void dirdcl (void)
+{
+  int type;
+
+  if (tokentype == '(') { /* ( dcl ) */
+    dcl();
+    if (tokentype != ')')
+      printf("error: missing )\n");
+  }
+  else if (tokentype == NAME) /* variable name */
+    strcpy(name, token);
+  else
+    printf("error: expected name or (dcl)\n");
+  while ((type = gettoken()) == PARENS || type == BRACKETS)
+    if (type == PARENS) /* () */
+      strcat(out, " function returning");
+    else { /* [] */
+      strcat(out, " array");
+      strcat(out, token); /* optional size */
+      strcat(out, " of");
+    }
+}
