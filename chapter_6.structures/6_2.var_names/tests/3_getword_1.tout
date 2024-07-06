@@ -1,0 +1,11 @@
+
+(B): BUFSIZE
+(E): EOF
+(b): buf bufp
+(c): c
+(g): getch getchar getword
+(i): ignore_nonwords isalnum isalpha isdigit isspace
+(l): lim
+(p): printf
+(u): ungetch
+(w): w word

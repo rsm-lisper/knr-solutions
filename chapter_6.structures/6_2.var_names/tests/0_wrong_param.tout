@@ -1,0 +1,3 @@
+Wrong parameter 1: 00
+Syntax: ./var_names <n>
+	n:	Group by the first n characters (default 6).

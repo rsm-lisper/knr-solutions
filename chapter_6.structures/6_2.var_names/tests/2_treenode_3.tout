@@ -1,0 +1,18 @@
+
+(NUL): NULL
+(add): addtree
+(con): cond
+(cou): count
+(gro): group group_by
+(lef): left
+(mal): malloc
+(p): p
+(pri): printf
+(rig): right
+(s): s
+(str): strcmp strcpy strdup strlen strncmp
+(tal): talloc
+(tno): tnode
+(tre): treeprint
+(w): w
+(wor): word

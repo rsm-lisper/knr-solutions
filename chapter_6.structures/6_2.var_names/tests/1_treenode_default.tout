@@ -1,0 +1,23 @@
+
+(NULL): NULL
+(addtre): addtree
+(cond): cond
+(count): count
+(group): group
+(group_): group_by
+(left): left
+(malloc): malloc
+(p): p
+(printf): printf
+(right): right
+(s): s
+(strcmp): strcmp
+(strcpy): strcpy
+(strdup): strdup
+(strlen): strlen
+(strncm): strncmp
+(talloc): talloc
+(tnode): tnode
+(treepr): treeprint
+(w): w
+(word): word
