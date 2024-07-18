@@ -1,0 +1,24 @@
+# include <stdio.h>
+# include <ctype.h>
+
+# define COLBREAK 80
+
+int main ()
+{
+  int c, col = 0;
+
+  while ((c = getchar()) != EOF) {
+    if (isgraph(c)) {
+      putchar(c);
+      col++;
+    } else {
+      printf("{0x%02x}", c);
+      col += 6;
+    }
+    if (col >= COLBREAK) {
+      putchar('\n');
+      col = 0;
+    }
+  }
+  return 0;
+}
