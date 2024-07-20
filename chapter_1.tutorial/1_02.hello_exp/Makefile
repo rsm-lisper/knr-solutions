@@ -1,3 +1,3 @@
 BINARY=hello_exp
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

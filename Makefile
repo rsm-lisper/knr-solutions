@@ -15,6 +15,6 @@ $(TOPTARGETS): $(SUBDIRS)
 $(SUBDIRS):
 	echo "* Directory "$(ANSIBOLD)$(ANSIYELLOW)$@$(ANSIRST)":"
 	$(MAKE) -C $@ $(MAKECMDGOALS)
-	echo $(ANSIYELLOW)"..."$@$(ANSIRST)" done."
+	echo " "$(ANSIYELLOW)$@$(ANSIRST)" done.\n"
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)

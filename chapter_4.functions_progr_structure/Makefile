@@ -1,3 +1,3 @@
 SUBDIRS=$(wildcard 4_*/)
 
-include ../Chapter_incl.mk
+include ../Chapter.mk

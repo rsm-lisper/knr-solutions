@@ -1,3 +1,3 @@
 BINARY=getword
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

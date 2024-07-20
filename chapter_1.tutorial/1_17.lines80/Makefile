@@ -1,3 +1,3 @@
 BINARY=lines80
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

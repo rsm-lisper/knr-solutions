@@ -1,3 +1,3 @@
 BINARY=undef
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

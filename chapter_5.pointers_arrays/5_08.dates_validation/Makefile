@@ -1,3 +1,3 @@
 BINARY=dates_validation
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

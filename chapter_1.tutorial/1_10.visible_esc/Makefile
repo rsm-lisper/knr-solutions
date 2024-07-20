@@ -1,3 +1,3 @@
 BINARY=visible_esc
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

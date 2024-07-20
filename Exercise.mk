@@ -19,7 +19,7 @@ MAKEFLAGS+=--silent
 all: $(BINARY)
 
 $(BINARY): $(CFILES)
-	echo -n "** Building "$(ANSIYBIN)":"
+	echo -n " - Building "$(ANSIYBIN)":"
 	$(CC) $(CFLAGS) -o $@ $^ $(LFLAGS)
 	echo $(ANSIGOK)
 
@@ -35,7 +35,7 @@ check: $(TEST_RESULTS)
 	echo $(ANSIGOK)
 
 clean:
-	echo -n "** Cleaning "$(ANSIYBIN)":"
+	echo -n " - Cleaning "$(ANSIYBIN)":"
 	rm -f $(BINARY)
 	rm -f $(TESTDIR)*.result
 	echo $(ANSIGOK)

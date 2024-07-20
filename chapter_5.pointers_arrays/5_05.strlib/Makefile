@@ -1,3 +1,3 @@
 BINARY=strlib
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk

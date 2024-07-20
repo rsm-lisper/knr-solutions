@@ -1,3 +1,3 @@
 BINARY=itoa
 
-include ../../Exercise_incl.mk
+include ../../Exercise.mk
