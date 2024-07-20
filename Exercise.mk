@@ -7,7 +7,8 @@ TEST_RESULTS=$(patsubst %.tin,%.res,$(TESTS))
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -ggdb -std=c89
 
-ifneq ($(filter $(shell tput colors),8 16 88 256),)
+ANSI_COLORS=$(shell tput colors 2>/dev/null)
+ifeq ($(ANSI_COLORS),$(filter $(ANSI_COLORS),8 16 88 256))
  ANSIGREEN="\033[32m"
  ANSIYELLOW="\033[33m"
  ANSIBOLD="\033[1m"
