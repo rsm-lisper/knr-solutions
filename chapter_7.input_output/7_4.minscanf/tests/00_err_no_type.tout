@@ -1,0 +1,3 @@
+Error reading type. Format:
+type t v0 v1 ... vn
+t - d: decimal int, f: float
