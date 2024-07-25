@@ -40,12 +40,15 @@ check: $(TEST_RESULTS)
 	echo -n " - testing "$(ANSIBOLD)$(BINARY)$(ANSIRST)":" \
 		$(ANSIYELLOW)$(patsubst $(TESTDIR)%.tin,%,$?)$(ANSIRST)
 	TEST_ARGS=$$(cat $(patsubst %.tin,%.targs,$?) 2>/dev/null) ; \
-	./$(BINARY) $$TEST_ARGS <$? >$@ult
+	./$(BINARY) $$TEST_ARGS <$? >$@ult 2>$@ult_err || ERR=1
 	diff --color=always --text $@ult $(patsubst %.tin,%.tout,$?)
+	if [ -f $(patsubst %.tin,%.terr,$?) ]; then \
+		diff --color=always --text $@ult_err $(patsubst %.tin,%.terr,$?); fi
 	echo $(ANSIGOK)
 
 clean:
 	echo -n " - Cleaning "$(ANSIYBIN)":"
 	rm -f $(BINARY)
 	rm -f $(TESTDIR)*.result
+	rm -f $(TESTDIR)*.result_err
 	echo $(ANSIGOK)
