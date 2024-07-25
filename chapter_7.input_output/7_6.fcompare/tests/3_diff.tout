@@ -1,0 +1,5 @@
+Files differ, line 25:
+tests/3_file0.c: int main (int argc, char **argv)
+
+tests/3_file1.c: int main (int argc,  char **argv)
+

@@ -1,0 +1,4 @@
+Files differ, line 16:
+tests/4_file0.c: int fgetline (FILE *fp, char *line, int max)
+
+tests/4_file1.c: [EOF]
