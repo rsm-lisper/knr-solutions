@@ -9,20 +9,22 @@ CFLAGS=-Wall -Wextra -Werror -ggdb -std=c89
 
 ANSI_COLORS=$(shell tput colors 2>/dev/null)
 ifeq ($(ANSI_COLORS),$(filter $(ANSI_COLORS),8 16 88 256))
- ANSIGREEN="\033[32m"
- ANSIYELLOW="\033[33m"
- ANSIBOLD="\033[1m"
- ANSIRST="\033[0m"
- ANSIGOK=" ["$(ANSIGREEN)"OK"$(ANSIRST)"] "
- ANSIYBIN=$(ANSIYELLOW)$(BINARY)$(ANSIRST)
+ANSIRED="\033[31m"
+ANSIGREEN="\033[32m"
+ANSIYELLOW="\033[33m"
+ANSIBOLD="\033[1m"
+ANSIRST="\033[0m"
+DIFFCOLOR="always"
 else
- ANSIGREEN=""
- ANSIYELLOW=""
- ANSIBOLD=""
- ANSIRST=""
- ANSIGOK=" [OK] "
- ANSIYBIN=$(BINARY)
+ANSIRED=""
+ANSIGREEN=""
+ANSIYELLOW=""
+ANSIBOLD=""
+ANSIRST=""
+DIFFCOLOR="never"
 endif
+ANSIGOK=" ["$(ANSIGREEN)"OK"$(ANSIRST)"] "
+ANSIYBIN=$(ANSIYELLOW)$(BINARY)$(ANSIRST)
 
 MAKEFLAGS+=--silent
 
@@ -36,15 +38,25 @@ $(BINARY): $(CFILES)
 check: $(TEST_RESULTS)
 	echo "** "$(ANSIBOLD)$(ANSIYBIN)" test results:"$(ANSIBOLD)$(ANSIGOK)
 
+%.res: TESTNAME=$(strip $(patsubst $(TESTDIR)%.tin,%,$?))
+%.res: TESTARGS=$$(cat $(strip $(patsubst %.tin,%.targs,$?)) 2>/dev/null)
+%.res: TESTOUT=$(strip $(patsubst %.tin,%.tout,$?))
+%.res: TESTERR=$(strip $(patsubst %.tin,%.terr,$?))
 %.res: %.tin
 	echo -n " - testing "$(ANSIBOLD)$(BINARY)$(ANSIRST)":" \
-		$(ANSIYELLOW)$(patsubst $(TESTDIR)%.tin,%,$?)$(ANSIRST)
-	TEST_ARGS=$$(cat $(patsubst %.tin,%.targs,$?) 2>/dev/null) ; \
-	./$(BINARY) $$TEST_ARGS <$? >$@ult 2>$@ult_err || ERR=1
-	diff --color=always --text $@ult $(patsubst %.tin,%.tout,$?)
-	if [ -f $(patsubst %.tin,%.terr,$?) ]; then \
-		diff --color=always --text $@ult_err $(patsubst %.tin,%.terr,$?); fi
+		$(ANSIYELLOW)$(TESTNAME)$(ANSIRST)
+ifeq (,$(wildcard $(BINARY)))
+	echo "\n"$(ANSIRED)"Error! "$(ANSIBOLD)"./"$(BINARY)$(ANSIRST)$(ANSIRED)" not found." \
+		"Please 'make'."$(ANSIRST)
+	false
+else
+	./$(BINARY) $(TESTARGS) <$? >$@ult 2>$@ult_err || true
+	diff --color=$(DIFFCOLOR) --text $@ult $(TESTOUT)
+	if [ -f $(strip $(TESTERR)) ]; then \
+		diff --color=$(DIFFCOLOR) --text $@ult_err $(TESTERR); \
+	fi
 	echo $(ANSIGOK)
+endif
 
 clean:
 	echo -n " - Cleaning "$(ANSIYBIN)":"
