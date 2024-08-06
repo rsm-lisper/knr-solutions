@@ -1,0 +1,1 @@
+Usage: ./fseek <file> <pos1> <len1> ... <posN> <lenN>
