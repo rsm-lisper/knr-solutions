@@ -41,7 +41,10 @@ void dirwalk (char *dir, void (*fcn)(char *))
 void finfo (char *name)
 {
   struct stat stbuf;
-  char *ftype, fbits[4] = "---", fmode[10] = "---------", mtime[64];
+  char *ftype, fbits[4] = "---", fmode[10] = "---------";
+# ifdef FULL_VER
+  char mtime[64];
+# endif
 
   if (stat(name, &stbuf) == -1) {
     fprintf(stderr, "finfo: can't access %s\n", name);
@@ -73,11 +76,16 @@ void finfo (char *name)
   if (stbuf.st_mode & S_IWOTH) fmode[7] = 'w';
   if (stbuf.st_mode & S_IXOTH) fmode[8] = 'x';
 
+# ifdef FULL_VER
   strftime(mtime, sizeof(mtime), "%Y/%m/%d %H:%M:%S", localtime(&stbuf.st_mtim.tv_sec));
     
   printf("%4s %4d:%4d %3s %9s %s %8ld %2lu %s\n",
          ftype, stbuf.st_uid, stbuf.st_gid, fbits, fmode, mtime,
          stbuf.st_size, stbuf.st_nlink, name);
+# else
+  printf("%4s %3s %9s %8ld %2lu %s\n",
+         ftype, fbits, fmode, stbuf.st_size, stbuf.st_nlink, name);
+# endif
 }
 
 /* print file name */
