@@ -1,0 +1,7 @@
+FILE 1000:1000 --- rw-r--r-- 2024/08/28 15:39:07     1506  1 tests/testdir//dirent.c
+FILE 1000:1000 --- rw-r--r-- 2024/08/28 15:48:28     2741  1 tests/testdir//main.c
+FILE 1000:1000 --- rw-r--r-- 2024/08/28 15:39:07       40  1 tests/testdir//Makefile
+FILE 1000:1000 --- rw-r--r-- 2024/08/28 15:48:28     2741  1 tests/testdir//mainlink.c
+FILE 1000:1000 --- rw-r--r-- 2024/08/28 15:45:37        0  1 tests/testdir//maindir/another_file
+ DIR 1000:1000 --- rwxr-xr-x 2024/08/28 15:45:37       24  1 tests/testdir//maindir
+ DIR 1000:1000 --- rwxr-xr-x 2024/08/28 15:40:17       78  1 tests/testdir/
